@@ -1,0 +1,13 @@
+{
+  "name": "koa-galen-schedule",
+  "version": "0.0.1",
+  "description": "koa galen schedule.",
+  "main": "index.js",
+  "repository": "https://github.com/AlfieriChou/koa-galen-schedule",
+  "author": "AlfieriChou <alfierichou@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "vm2": "^3.9.2"
+  }
+}
