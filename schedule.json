@@ -1,4 +1,4 @@
 [{
-  "time": "0 * * * *",
-  "task": "() => { console.log('At Ten Minutes:', Date.now()) }"
+  "time": "0 * * * * *",
+  "task": "() => { console.log('Time:', Date.now()) }"
 }]
