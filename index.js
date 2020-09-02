@@ -13,7 +13,6 @@ schedules.reduce(async (promise, schedule) => {
   vm.run(`
     const { CronJob } = require('cron')
     const job = new CronJob('${schedule.time}', ${schedule.task})
-    console.log('After job instantiation')
     job.start()
-  `, 'index.js')
+  `, `${schedule.name || 'index'}.js`)
 }, Promise.resolve())

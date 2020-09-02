@@ -1,4 +1,5 @@
 [{
+  "name": "test",
   "time": "0 * * * * *",
   "task": "() => { console.log('Time:', Date.now()) }"
 }]
