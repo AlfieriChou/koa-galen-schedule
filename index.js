@@ -1,6 +1,6 @@
 const { NodeVM } = require('vm2')
-
-const schedules = require('./schedule.json')
+const readDirFilenames = require('read-dir-filenames')
+const path = require('path')
 
 const vm = new NodeVM({
   require: {
@@ -8,11 +8,17 @@ const vm = new NodeVM({
   }
 })
 
-schedules.reduce(async (promise, schedule) => {
-  await promise
-  vm.run(`
-    const { CronJob } = require('cron')
-    const job = new CronJob('${schedule.time}', ${schedule.task})
-    job.start()
-  `, `${schedule.name || 'index'}.js`)
-}, Promise.resolve())
+const run = async (schedulePath) => {
+  const schedules = readDirFilenames(schedulePath || path.resolve(__dirname, './schedules'))
+  schedules.reduce(async (promise, schedulePath) => {
+    await promise
+    const { schedule, task } = require(schedulePath)
+    vm.run(`
+      const { CronJob } = require('cron')
+      const job = new CronJob('${schedule.time}', ${task})
+      job.start()
+    `, `${schedulePath || 'schedule'}.js`)
+  }, Promise.resolve())
+}
+
+run()

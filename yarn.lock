@@ -21,6 +21,11 @@ moment-timezone@^0.5.x:
   resolved "https://registry.npm.taobao.org/moment/download/moment-2.27.0.tgz?cache=0&sync_timestamp=1592843342961&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmoment%2Fdownload%2Fmoment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
   integrity sha1-i/9OPiaiNiIN/j423nVrbrqgEF0=
 
+read-dir-filenames@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/read-dir-filenames/download/read-dir-filenames-1.0.5.tgz#6f44f7c8fa811931dfe9780ad67f6f394fc8216f"
+  integrity sha1-b0T3yPqBGTHf6XgK1n9vOU/IIW8=
+
 vm2@^3.9.2:
   version "3.9.2"
   resolved "https://registry.npm.taobao.org/vm2/download/vm2-3.9.2.tgz#a4085d2d88a808a1b3c06d5478c2db3222a9cc30"
